@@ -60,6 +60,7 @@ p {
 
 .page-wrapper {
     font-family: 'Libre Baskerville', sans-serif;
+    position: relative;
 }
 
 .intro {
@@ -86,6 +87,11 @@ p {
     width: 66vw;
     text-align: left;
     float: center;
+    padding-top: 2em;
+}
+
+#zen-summary {
+    text-transform: uppercase;
 }
 
 div.preamble {
@@ -115,17 +121,45 @@ div.benefits {
     background: rgba(91, 124, 105, 0.5);
 }
 
-div.requirements {
-    width: 66vw;
+.requirements p:nth-child(5){
+    padding-bottom: 2em;
 }
 
-.sidebar {
+.supporting .requirements {
+    float: none;
+    clear: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.supporting .requirements a {
+    text-decoration: none;
+}
+
+.supporting .requirements h3{
+    padding-top: 0;
+}
+
+.requirements p:last-child {
+    width: auto;
+    padding: 1em 12%;
+    margin: 0;
+
+}
+
+#zen-supporting, #zen-explanation, #zen-participation {
+    width: 66vw;
+    display: inline-block;
+}
+
+ .sidebar {
     background: #b6bbb9;
     position: absolute;
     right: 0;
     top: 0;
-    width: 40%;
-}
+    width: 33vw;
+} 
 
 .wrapper {
 
@@ -133,10 +167,22 @@ div.requirements {
 
 .viewall {
     color: #294242;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .design-selection {
-    text-align: right;
+    text-align: left;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    margin-top: 50px;
+}
+
+.design-selection .design-archives .design-archives h3 {
+    display: none;
 }
 
 .select {
@@ -145,10 +191,23 @@ div.requirements {
 
 .design-archives {
     text-align: right;
-    float: right;
     width: 33vw;
     position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
     background: rgba(255,255,255,0.2);
+    height: 310px;
+    margin: auto;
+}
+
+.design-archives li {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
 }
 
 .next {
@@ -164,13 +223,29 @@ li {
     text-align: left;
 }
 
-#zen-resources {
+.resources {
+    display: none;
+}
+
+.zen-resources {
+    position: absolute;
     text-align: left;
     background-color: rgba(112, 153, 130, 0.5);
     display: block;
     overflow: hidden;
     float: right;
     width: 33vw;
+}
+
+.zen-resources li {
+    border-top: solid 1px;
+    font-style: normal;
+}
+
+.zen-resources li:last-child {
+    float: none;
+    width: auto;
+    border-bottom: solid 1px;
 }
 
 .resources {
@@ -220,4 +295,8 @@ li {
 
 ul {
     list-style-type: none;
+}
+
+footer {
+    clear: both;
 }
