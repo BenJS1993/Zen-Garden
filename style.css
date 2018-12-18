@@ -1,23 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=K2D');
+
 * {
     padding: 0;
     margin: 0;
     border: 0;
 }
 
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 70%;
+}
+
 div {
     display: block;
+}
+
+a {
+
 }
 
 header {
     background-color: #294242;
     border-top: 20px solid #334d4d;
-    height: 160px;
+    height: 230px;
     text-align: center;
     margin: auto;
     width: 66vw;
     padding: 20px 0 70px 0;
     display: block;
+
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-position: 0 0, 0 0, -5px -25px, 0 50%;
+    background-size: auto, auto, auto, cover;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+}
+
+h1, h2 {
+    padding: 0 5%;
+    margin: 0;
+    font-weight: normal;
 }
 
 h1 {
@@ -25,6 +50,20 @@ h1 {
     padding-top: 0px;
     padding-bottom: 5px;
     border-bottom: none;
+    font-size: 3.2em;
+    text-transform: uppercase;
+}
+
+h1::before {
+    display: inline-block;
+    position: relative;
+    content: "";
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    margin: -20px 20px 0 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 h2 {
@@ -32,15 +71,22 @@ h2 {
     border-top: none;
     padding-top: 5px;
     padding-bottom: 30px;
+    font-size: 1.6em;
     font-style: italic;
     text-transform: none;
     color: grey;
+}
+
+h2::before {
+    content: "";
+    padding: 50px;
 }
 
 h3 {
     text-transform: uppercase;
     font-weight: normal;
     display: block;
+    /* text-align: left; */
 }
 
 abbr {
@@ -50,22 +96,30 @@ abbr {
     letter-spacing: 0.01em;
 }
 
-div {
-    display: block;
-}
-
 p {
-    display: block;
+    margin: 0.75em 0;
+    line-height: 2;
+    /* display: block; */
 }
 
 .page-wrapper {
-    font-family: 'Libre Baskerville', sans-serif;
     position: relative;
+}
+
+.summary, .preamble {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.supporting h3, .supporting p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .intro {
     width: 66.6%;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
 }
 
@@ -76,18 +130,19 @@ p {
 }
 
 .banner {
-    float: center;
+    /* float: center; */
     width: 66vw;
-    text-align: center;
+    text-align: left;
 
 }
 
 .summary {
-    text-transform: none;
+    /* text-transform: none;
     width: 66vw;
     text-align: left;
-    float: center;
+    float: center; */
     padding-top: 2em;
+    padding-left: 85px;
 }
 
 #zen-summary {
@@ -97,7 +152,10 @@ p {
 div.preamble {
     text-transform: none;
     text-align: left;
+    float: center;
     width: 66vw;
+    padding-bottom: 2em;
+    margin-left: 100px;
 }
 
 div.main-supporting {
@@ -108,17 +166,40 @@ div.explanation {
     width: 66vw;
 }
 
-div.participation {
-    margin-top: 3em;
+div.participation, div.benefits {
+    background-color: rgba(91, 124, 105, 0.5);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover;
+    background-attachment: scroll, scroll, fixed;
     width: 66vw;
-    background: rgba(91, 124, 105, 0.5);
+}
+
+div.participation {
+    padding: 3em 0;
+    margin-top: 3em; 
 }
 
 div.benefits {
     padding-bottom: 3em;
     margin-bottom: 3em;
-    width: 66vw;
-    background: rgba(91, 124, 105, 0.5);
+    
+}
+
+div.requirements {
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover;
+    background-attachment: scroll, scroll, fixed;
+    padding: 3em 0;
+    margin-bottom: 3em;
+    margin-left: 8px;
+}
+
+div.participation h3, div.benefits h3 {
+    margin-top: 0;
+}
+
+div.participation p, div.benefits p {
+    margin-bottom: 0;
 }
 
 .requirements p:nth-child(5){
@@ -145,7 +226,17 @@ div.benefits {
     width: auto;
     padding: 1em 12%;
     margin: 0;
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-position: 0 0, -5px -25px, 0 0, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto, auto, auto, cover;
+    font-size: 1em;
+    font-style: oblique;
+    text-align: center;
+}
 
+.requirements p:last-child a {
+    font-style: normal;
 }
 
 #zen-supporting, #zen-explanation, #zen-participation {
@@ -153,7 +244,7 @@ div.benefits {
     display: inline-block;
 }
 
- .sidebar {
+.sidebar {
     background: #b6bbb9;
     position: absolute;
     right: 0;
@@ -161,8 +252,36 @@ div.benefits {
     width: 33vw;
 } 
 
-.wrapper {
+.sidebar h3 {
+    display: none;
+}
 
+.sidebar a {
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 33vw;
+}
+
+.sidebar a:hover .sidebar a:focus {
+    color: #49865e;
+}
+
+/* .sidebar li {
+    float: none;
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 29.4% 0 14.7%;
+} */
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.wrapper {
 }
 
 .viewall {
@@ -181,12 +300,66 @@ div.benefits {
     margin-top: 50px;
 }
 
-.design-selection .design-archives .design-archives h3 {
+.design-selection ul, .zen-resources ul {
+    margin: 0;
+}
+
+.design-selection li, .zen-resources li {
+    border-top: solid 1px;
+    /* top: 0; */
+    float: left;
+    width: 50%;
+    padding: 1.5em 10%;
+    margin: 0;
+    /* border: none; */
+    /* list-style: none; */
+    font-style: italic;
+}
+
+.design-selection li:first-child {
+    border-top: 0;
+}
+
+.design-selection li:nth-child(2n+1), .zen-resources a, li:nth-child(2n+1){
+    clear: left;
+}
+
+.design-selection .design-name, .zen-resources a, li.viewall a {
+    display: block;
+    margin-bottom: 0.25em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.design-selection h3 {
     display: none;
+}
+
+.design-archives h3 {
+    display: none;
+}
+
+.resources h3 {
+    display: none;
+}
+
+.intro h3, .supporting h3 {
+    margin-top: 0;
+}
+
+.intro p:last-child, .supporting p:last-child {
+    margin-bottom: 0;
 }
 
 .select {
 
+}
+
+.design-selection .designer-name {
+    font-size: 0.9em;
+    font-style: normal;
 }
 
 .design-archives {
@@ -201,6 +374,10 @@ div.benefits {
     margin: auto;
 }
 
+.design-archives ul {
+    margin: 0;
+}
+
 .design-archives li {
     position: absolute;
     top: 0;
@@ -208,6 +385,27 @@ div.benefits {
     margin: 0;
     border: none;
     list-style: none;
+}
+
+.design-archives li.viewall {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 71px;
+    line-height: 50px;
+}
+
+.design-archives .previous a::before {
+    content: "<";
+}
+
+.design-archives .next a::before {
+    content: ">";
+}
+
+.previous, .next {
+    left: 0;
+    z-index: 3;
 }
 
 .next {
@@ -225,6 +423,7 @@ li {
 
 .resources {
     display: none;
+    text-align: right;
 }
 
 .zen-resources {
@@ -235,6 +434,10 @@ li {
     overflow: hidden;
     float: right;
     width: 33vw;
+}
+
+.zen-resources h3 {
+    display: none;
 }
 
 .zen-resources li {
@@ -248,11 +451,7 @@ li {
     border-bottom: solid 1px;
 }
 
-.resources {
-    text-align: right;
-}
-
-.view-css {
+/* .view-css {
 
 }
 
@@ -270,7 +469,7 @@ li {
 
 #zen-translations {
 
-}
+} */
 
 #zen-supporting {
     position: relative;
@@ -299,4 +498,25 @@ ul {
 
 footer {
     clear: both;
+    padding: 3em 10%;
+    text-align: center;
+}
+
+footer a {
+    width: 40px;
+    height: 40px;
+    padding: 40px 0 0 0;
+    margin: 0 0.5em;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+footer a::before {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    overflow: visible;
+    font-size: 30px;
 }
